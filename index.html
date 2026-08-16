@@ -42,8 +42,6 @@
     object-fit: contain;
     border-radius: 8px;
 }
-    
-        }
 
         nav a {
             color: #aaa;
@@ -101,22 +99,7 @@
         }
     </style>
 </head>
-<script>
-    const DISCORD_CLIENT_ID = "1538432802750464031";
 
-    function loginDiscord() {
-        const redirectUri = "https://cavs-io.github.io/TocaSite/";
-
-        const url =
-            "https://discord.com/oauth2/authorize" +
-            "?client_id=" + DISCORD_CLIENT_ID +
-            "&response_type=code" +
-            "&redirect_uri=" + encodeURIComponent(redirectUri) +
-            "&scope=identify";
-
-        window.location.href = url;
-    }
-</script>
 <body>
 
     <header>
@@ -153,6 +136,21 @@
     <footer>
         Toca © 2026
     </footer>
+<script>
+    const DISCORD_CLIENT_ID = "1538432802750464031";
 
+    function loginDiscord() {
+        const redirectUri = "https://cavs-io.github.io/TocaSite/";
+
+        const url =
+            "https://discord.com/oauth2/authorize" +
+            "?client_id=" + DISCORD_CLIENT_ID +
+            "&response_type=code" +
+            "&redirect_uri=" + encodeURIComponent(redirectUri) +
+            "&scope=identify";
+
+        window.location.href = url;
+    }
+</script>
 </body>
 </html>
