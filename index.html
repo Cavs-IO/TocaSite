@@ -139,9 +139,30 @@
 <script>
     const DISCORD_CLIENT_ID = "1538432802750464031";
 
+    function saveLogin() {
+        localStorage.setItem("toca_last_login", "true");
+    }
+    
     function loginDiscord() {
         const redirectUri = "https://cavs-io.github.io/TocaSite/";
 
+    function checkDiscordLogin() {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (!code) {
+        return;
+    }
+
+    saveLogin();
+
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+}
+        
         const url =
             "https://discord.com/oauth2/authorize" +
             "?client_id=" + DISCORD_CLIENT_ID +
@@ -151,6 +172,7 @@
 
         window.location.href = url;
     }
+checkDiscordLogin();
 </script>
 </body>
 </html>
