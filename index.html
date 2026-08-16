@@ -101,7 +101,22 @@
         }
     </style>
 </head>
+<script>
+    const DISCORD_CLIENT_ID = "1538432802750464031";
 
+    function loginDiscord() {
+        const redirectUri = "https://cavs-io.github.io/TocaSite/";
+
+        const url =
+            "https://discord.com/oauth2/authorize" +
+            "?client_id=" + DISCORD_CLIENT_ID +
+            "&response_type=code" +
+            "&redirect_uri=" + encodeURIComponent(redirectUri) +
+            "&scope=identify";
+
+        window.location.href = url;
+    }
+</script>
 <body>
 
     <header>
@@ -125,9 +140,9 @@
         </p>
 
         <div class="buttons">
-            <a href="#" class="button">
-                Entrar com Discord
-            </a>
+            <button class="button" onclick="loginDiscord()">
+    Entrar com Discord
+</button>
 
             <a href="#" class="button secondary">
                 Ver Ranking
